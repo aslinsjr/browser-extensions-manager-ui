@@ -106,7 +106,7 @@ class ExtensionsManager {
     showEmptyState(message = 'Nenhuma extensão encontrada para este filtro') {
         this.container.innerHTML = `
             <div class="empty-state">
-                <img src='./assets/images/empty-state.png'/>
+                <img src='./assets/empty-state.png'/>
             </div>
         `;
     }

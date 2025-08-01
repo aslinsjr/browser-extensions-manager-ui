@@ -74,13 +74,13 @@ header button {
 .btn-image {
     width: 1.5rem;
     aspect-ratio: 1;
-    background-image: url("./assets/images/icon-sun.svg");
+    background-image: url("./assets/icon-sun.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .theme-light .btn-image {
-    background-image: url("./assets/images/icon-moon.svg");
+    background-image: url("./assets/icon-moon.svg");
 }
 
 .theme-light header button:hover {
