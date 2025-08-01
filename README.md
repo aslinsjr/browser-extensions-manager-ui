@@ -21,8 +21,8 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Repository](https://github.com/aslinsjr/ip-address-tracker-master)
-- Live Site URL: [Page](https://aslinsjr.github.io/ip-address-tracker-master/)
+- Solution URL: [Repository](https://github.com/aslinsjr/browser-extensions-manager-ui)
+- Live Site URL: [Page](https://aslinsjr.github.io/browser-extensions-manager-ui/)
 
 ## My process
 
