@@ -1,0 +1,313 @@
+:root {
+    --neutral-900: hsl(227, 75%, 14%);
+    --neutral-800: hsl(226, 25%, 17%);
+    --neutral-700: hsla(225, 23%, 24%, 0.9);
+    --neutral-600: hsl(226, 11%, 37%);
+    --neutral-300: hsl(0, 0%, 78%);
+    --neutral-200: hsl(217, 61%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+    --neutral-0: hsl(200, 60%, 99%);
+
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+
+    --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+   --box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.3);
+
+    color-scheme: dark light;
+    background: var(--dark-gradient) no-repeat center;
+    color: var(--neutral-0);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-bottom: 6rem;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--red-500);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--neutral-800);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+header .logo-text {
+    fill: var(--neutral-0);
+}
+
+header button {
+    padding: 0.7rem;
+    background-color: var(--neutral-700);
+    border: none;
+    border-radius: 1rem;
+}
+
+.btn-image {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-image: url("./assets/images/icon-sun.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.theme-light .btn-image {
+    background-image: url("./assets/images/icon-moon.svg");
+}
+
+.theme-light header button:hover {
+    background-color: var(--neutral-300);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin: 2rem 0;
+}
+
+nav h1 {
+    font-size: 2rem;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+nav button {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--neutral-700);
+    font-size: 1.1rem;
+    color: var(--neutral-0);
+}
+
+nav button.active {
+    background-color: var(--red-500);
+    color: var(--neutral-800);
+    font-weight: 700;
+}
+
+nav button:hover {
+    color: var(--neutral-800);
+    font-weight: 700;
+    box-shadow: var(--box-shadow);
+}
+
+.extensions-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    width: 100%;
+    padding: 1rem;
+    background: var(--neutral-800);
+    backdrop-filter: blur(0.5rem);
+    border: 1px solid var(--neutral-600);
+    box-shadow: 0 5px 0.5rem var(--neutral-900);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.card-header {
+    display: flex;
+    margin-bottom: 4rem;
+    gap: 1rem;
+}
+
+.header-text {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove-btn {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid var(--neutral-600);
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: var(--neutral-0);
+}
+
+.remove-btn:hover {
+    color: var(--neutral-900);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--neutral-600);
+    border-radius: 34px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: 0.1rem;
+    bottom: 0.1rem;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked+.toggle-slider {
+    background: var(--red-400);
+}
+
+.toggle-switch input:checked+.toggle-slider:before {
+    transform: translateX(1.3rem);
+}
+
+
+.toggle-switch input:checked+.toggle-slider {
+    color: white;
+}
+
+
+.toggle-switch:active .toggle-slider {
+    transform: scale(0.95);
+}
+
+.empty-state {
+    position: absolute;
+    left: calc(50% - 50px);
+    top: 50vh;
+}
+
+.empty-state img {
+    transform: scale(1.5);
+}
+
+.attribution {
+    font-size: 0.9rem;
+    position: fixed;
+    padding: 0.5rem 1rem;
+    background-color: var(--neutral-700);
+    right: 1rem;
+    bottom: 1rem;
+    border: 1px solid var(--neutral-600);
+    border-radius: 1rem;
+    backdrop-filter: blur(0.2rem);
+    box-shadow: var(--box-shadow);
+}
+
+.attribution p {
+    margin: 0.2rem 0;
+}
+
+.attribution a {
+    color: var(--red-400);
+}
+
+.theme-light {
+    --dark-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+
+    --neutral-900: hsl(200, 60%, 99%);
+    --neutral-800: hsl(200, 60%, 99%);
+    --neutral-700: hsla(200, 60%, 99%, 0.9);
+
+    --neutral-0: hsl(227, 75%, 14%);
+
+    --box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        max-width: 720px;
+    }
+
+    .extensions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        max-width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .extensions-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
